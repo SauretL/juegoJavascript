@@ -6,10 +6,20 @@ let arrayMonstruos = [
     { nombre: "Hormiga", id: "002", hp: "8", mp: "5", ataqueFisico: "3", ataquePsiquico: "3", imagen: "" },
     { nombre: "Abeja", id: "003", hp: "15", mp: "10", ataqueFisico: "6", ataquePsiquico: "4", imagen: "" },
     { nombre: "Mariposa", id: "004", hp: "10", mp: "15", ataqueFisico: "4", ataquePsiquico: "6", imagen: "" },
-    { nombre: "Gusano", id: "005", hp: "15", mp: "12", ataqueFisico: "10", ataquePsiquico: "7", imagen: "" },
-    { nombre: "Escarabajo", id: "006", hp: "12", mp: "15", ataqueFisico: "7", ataquePsiquico: "10", imagen: "" },
+    { nombre: "Gusano", id: "005", hp: "15", mp: "12", ataqueFisico: "10", ataquePsiquico: "8", imagen: "" },
+    { nombre: "Escarabajo", id: "006", hp: "12", mp: "15", ataqueFisico: "7", ataquePsiquico: "12", imagen: "" },
     { nombre: "Reina", id: "007", hp: "30", mp: "30", ataqueFisico: "15", ataquePsiquico: "15", imagen: "" }
 ];
+
+/*Heroes para elegir */
+
+let arrayHeroes = [
+    { nombre: "Psyko", rol: "Tanque psiquico", hp: "70", mp: "30", ataqueFisico: "3", ataquePsiquico: "5", color: "" },
+    { nombre: "Lance", rol: "Cañon de Cristal", hp: "30", mp: "60", ataqueFisico: "8", ataquePsiquico: "2", color: "" },
+    { nombre: "Sword", rol: "Guerrero moderado", hp: "60", mp: "40", ataqueFisico: "5", ataquePsiquico: "3", color: "" }
+]
+
+/*Botón de Catálogo */
 
 let botonCatalogo = document.getElementById("botonCatalogo")
 botonCatalogo.addEventListener("click", clickCatalogo)
@@ -47,4 +57,44 @@ function mostrarDetalleMonstruo(index) {
   `
 
     infoMonstruo.innerHTML = listaMonstruo
+}
+
+/*Botón de Juego*/
+
+let botonInicio = document.getElementById("botonInicio")
+botonInicio.addEventListener("click", clickInicio)
+
+function clickInicio() {
+    let infoHeroes = ""
+
+    for (let i = 0; i < arrayHeroes.length; i++) {
+        const heroe = arrayHeroes[i]
+        infoHeroes += `
+        <div>
+          <h3>${heroe.nombre}</h3>
+          <ul>
+            <li>Rol: ${heroe.rol}</li>
+            <li>HP (Puntos de Vida): ${heroe.hp}</li>
+            <li>MP (Puntos de Mente): ${heroe.mp}</li>
+            <li>Ataque Físico: ${heroe.ataqueFisico}</li>
+            <li>Ataque Psíquico: ${heroe.ataquePsiquico}</li>
+          </ul>
+             <button onclick="guardarHeroe(${i})">Guardar</button>
+      </div>
+    `
+  }
+
+  juego.innerHTML = infoHeroes
+}
+
+let heroe = ""
+
+function guardarHeroe(index) {
+  heroe = arrayHeroes[index]
+  console.log("Guardando héroe:", heroe)
+  juegoPelea()
+}
+
+function juegoPelea() {
+  console.log("Empieza el juego")
 }
