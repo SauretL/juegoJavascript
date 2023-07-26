@@ -157,7 +157,26 @@ function iniciarJuego() {
 /*Ataques Jugador */
 
 function ganasteJuego() {
-  alert(`Le ganaste a ${monstruoAleatorio.nombre}`)
+  
+  let timerInterval
+  Swal.fire({
+    title: "¡Ganaste!",
+    html: `Le ganaste a ${monstruoAleatorio.nombre}`,
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: () => {
+      Swal.showLoading()
+    },
+    willClose: () => {
+      clearInterval(timerInterval)
+    }
+  }).then((result) => {
+    /* Read more about handling dismissals below */
+    if (result.dismiss === Swal.DismissReason.timer) {
+      console.log('I was closed by the timer')
+    }
+  })
+
   heroeSeleccionado.xp++
   document.getElementById("xpHeroe").textContent = heroeSeleccionado.xp
   iniciarJuego()
@@ -202,7 +221,13 @@ function realizarAtaquePsiquico() {
 /*Ataques Monstruo */
 
 function perdisteJuego() {
-  alert("PERDISTE EL JUEGO")
+
+  Swal.fire({
+    title: "Haz perdido el juego",
+    text: "Carga una partida vieja o reinicia la página para continuar",
+    icon: 'error',
+    confirmButtonText: "Ok"
+  })
 }
 
 function turnoMonstruo() {
@@ -259,7 +284,26 @@ function salvarPartida() {
         ataquePsiquico: heroeSeleccionado.ataquePsiquico
       };
       localStorage.setItem(clave, JSON.stringify(datosPartida))
-      alert(`Estadísticas del héroe ${heroeSeleccionado.nombre} guardadas exitosamente.`)
+
+      let timerInterval
+      Swal.fire({
+        title: "Salvado exitoso",
+        html: `Estadísticas del héroe ${heroeSeleccionado.nombre} guardadas exitosamente.`,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading()
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          console.log('I was closed by the timer')
+        }
+      })
+
     }
     salvar.innerHTML = ""
   })
