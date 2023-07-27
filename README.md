@@ -10,3 +10,5 @@ La única forma de derrotar a un enemigo es bajar su MP o su HP a 0. Cuando derr
 Si salvas partida luego puedes acceder a las estadisticas de tu personaje (al momento de que salvaste) cargando la misma partida.
 
 Si tu personaje llega a los 0 MP o 0 HP perderas la partida y la única forma de seguir sera iniciando una nueva o cargando una vieja.
+
+IMPORTANTE: para que funcione es necesario tener una aplicación que permita el acceso a recursos a través de CORS.
