@@ -197,6 +197,14 @@ function realizarAtaqueFisico() {
     monstruoAleatorio.hp = hpMonstruo.toString()
     document.getElementById("hpMonstruo").textContent = monstruoAleatorio.hp
 
+    Toastify({
+      text: "¡Has realizado un ataque físico!",
+      duration: 3000,
+      gravity: "top", 
+      position: "right", 
+      backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+    }).showToast()
+
     if (monstruoAleatorio.hp < 0 || monstruoAleatorio.mp < 0) {
       ganasteJuego()
     }
@@ -215,6 +223,14 @@ function realizarAtaquePsiquico() {
     monstruoAleatorio.mp = mpMonstruo.toString()
     document.getElementById("mpMonstruo").textContent = monstruoAleatorio.mp
 
+    Toastify({
+      text: "¡Has realizado un ataque psíquico!",
+      duration: 3000,
+      gravity: "top", 
+      position: "right", 
+      backgroundColor: "linear-gradient(to right, #96c93d, #00b09b)",
+    }).showToast()
+
     if (monstruoAleatorio.hp < 0 || monstruoAleatorio.mp < 0) {
       ganasteJuego()
     }
@@ -229,7 +245,7 @@ function perdisteJuego() {
 
   Swal.fire({
     title: "Haz perdido el juego",
-    text: "Carga una partida vieja o reinicia la página para continuar",
+    text: "Carga una partida vieja o inicia un nuevo juego para continuar",
     icon: 'error',
     confirmButtonText: "Ok"
   })
@@ -245,6 +261,15 @@ function turnoMonstruo() {
       hpHeroe -= ataqueFisicoMonstruo
       heroeSeleccionado.hp = hpHeroe.toString()
       document.getElementById("hpHeroe").textContent = heroeSeleccionado.hp
+
+      Toastify({
+        text: `¡${monstruoAleatorio.nombre} realizo un ataque físico!`,
+        duration: 3000,
+        gravity: "top", 
+        position: "right", 
+        backgroundColor: "linear-gradient(to right, #FBD72B, #F9484A)",
+      }).showToast()
+
       console.log("Turno del monstruo: Realizó un ataque físico")
     } else {
       let mpHeroe = (heroeSeleccionado.mp)
@@ -252,6 +277,15 @@ function turnoMonstruo() {
       mpHeroe -= ataquePsiquicoMonstruo
       heroeSeleccionado.mp = mpHeroe.toString()
       document.getElementById("mpHeroe").textContent = heroeSeleccionado.mp
+
+      Toastify({
+        text: `¡${monstruoAleatorio.nombre} realizo un ataque psíquico!`,
+        duration: 3000,
+        gravity: "top", 
+        position: "right", 
+        backgroundColor: "linear-gradient(to right, #ED008C, #FFF000)",
+      }).showToast()
+
       console.log("Turno del monstruo: Realizó un ataque psíquico")
 
     }
