@@ -24,6 +24,74 @@ body {
         background-color: lightblue;
     }
 
+    .heroeJugador {
+        width: 200px;
+        height: 250px;
+        margin: 10px;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: lightblue;
+        border: 5px solid cyan;
+
+    }
+
+    .botonMonstruo {
+        padding: 8px;
+        background-color: black;
+        color: white;
+
+        &:hover {
+            background-color: red;
+        }
+    }
+
+    .botonPelea {
+        padding: 4px;
+        color: white;
+
+
+    }
+
+    #ataqueFisicoBoton {
+        background-color: orangered;
+
+        &:hover {
+            background-color: white;
+            color: red;
+            font-weight: bolder;
+        }
+    }
+
+    #ataquePsiquicoBoton {
+        background-color: purple;
+
+        &:hover {
+            background-color: white;
+            color: red;
+            font-weight: bolder;
+        }
+    }
+
+    #salvarBoton {
+        background-color: green;
+
+        &:hover {
+            background-color: white;
+            color: red;
+            font-weight: bolder;
+        }
+    }
+
+    #cargarBoton {
+        background-color: blue;
+
+        &:hover {
+            background-color: white;
+            color: red;
+            font-weight: bolder;
+        }
+    }
+
 
     .heroeLista {
         display: flex;
@@ -36,7 +104,6 @@ body {
         border-radius: 10px;
         background-color: navajowhite;
         border: 2px solid yellowgreen;
-        display: flex;
         flex-direction: column;
         align-items: center;
 
@@ -169,5 +236,49 @@ body {
         margin: 18px;
         padding: 15px;
         height: 30px;
+        border: 3px solid orangered;
     }
+}
+
+#nombreInput {
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid limegreen;
+    border-radius: 8px;
+    color: grey;
+    background-color: navajowhite;
+    box-shadow: 0 2px 4px black;
+
+}
+
+#guardarBoton {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    background-color: blue;
+    box-shadow: 0 4px 6px black;
+
+    &:hover {
+        background-color: green;
+    }
+
+}
+
+.guardado {
+    padding-top: 25px;
+}
+
+.botonCargarPartida {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-top: 5px;
+
+    &:hover {
+        background-color: limegreen;
+    }
+
 }

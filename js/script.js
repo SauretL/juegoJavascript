@@ -127,14 +127,14 @@ function iniciarJuego() {
     </ul>
     <img src="${monstruoAleatorio.imagen}" alt="Imagen del monstruo">
     <div class="panelDePelea">
-      <button id="ataqueFisicoBoton">Ataque Físico</button>
-      <button id="ataquePsiquicoBoton">Ataque Psíquico</button>
-      <button id="salvarBoton">Salvar Partida</button>
-      <button id="cargarBoton">Cargar Partida</button>
+      <button id="ataqueFisicoBoton" class="botonPelea">Ataque Físico</button>
+      <button id="ataquePsiquicoBoton" class="botonPelea">Ataque Psíquico</button>
+      <button id="salvarBoton" class="botonPelea">Salvar Partida</button>
+      <button id="cargarBoton" class="botonPelea">Cargar Partida</button>
     </div>
     </div>
   `
-  jugador.innerHTML = `
+  jugador.innerHTML = ` <div class="heroeJugador">
   <h3>${heroeSeleccionado.nombre}</h3>
   <ul>
     <li>Rol: ${heroeSeleccionado.rol}</li>
@@ -144,6 +144,7 @@ function iniciarJuego() {
     <li>Ataque Psíquico: ${heroeSeleccionado.ataquePsiquico}</li>
     <li>XP (experiencia): <span id="xpHeroe">${heroeSeleccionado.xp}</span> </li>
   </ul>
+  </div>
 `
 
   infoMonstruoAleatorio.innerHTML = detalleMonstruo
@@ -302,9 +303,10 @@ function turnoMonstruo() {
 
 
 function salvarPartida() {
-  salvar.innerHTML = `
+  salvar.innerHTML = ` <div class="guardado">
     <input type="text" id="nombreInput" placeholder="Ingresa tu nombre">
     <button id="guardarBoton">Guardar</button>
+    </div>
   `;
 
   let nombreInput = document.getElementById("nombreInput")
@@ -372,6 +374,7 @@ function cargarPartida() {
     let partida = JSON.parse(localStorage.getItem(clave))
     let li = document.createElement("li")
     let botonCargar = document.createElement("button")
+    botonCargar.classList.add("botonCargarPartida")
     botonCargar.textContent = clave.substring("partida_".length)
     botonCargar.addEventListener("click", function () {
       cargarDatosPartida(partida)

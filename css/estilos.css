@@ -19,6 +19,59 @@ body #botonCatalogo {
 body #botonInicio {
   background-color: lightblue;
 }
+body .heroeJugador {
+  width: 200px;
+  height: 250px;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: lightblue;
+  border: 5px solid cyan;
+}
+body .botonMonstruo {
+  padding: 8px;
+  background-color: black;
+  color: white;
+}
+body .botonMonstruo:hover {
+  background-color: red;
+}
+body .botonPelea {
+  padding: 4px;
+  color: white;
+}
+body #ataqueFisicoBoton {
+  background-color: orangered;
+}
+body #ataqueFisicoBoton:hover {
+  background-color: white;
+  color: red;
+  font-weight: bolder;
+}
+body #ataquePsiquicoBoton {
+  background-color: purple;
+}
+body #ataquePsiquicoBoton:hover {
+  background-color: white;
+  color: red;
+  font-weight: bolder;
+}
+body #salvarBoton {
+  background-color: green;
+}
+body #salvarBoton:hover {
+  background-color: white;
+  color: red;
+  font-weight: bolder;
+}
+body #cargarBoton {
+  background-color: blue;
+}
+body #cargarBoton:hover {
+  background-color: white;
+  color: red;
+  font-weight: bolder;
+}
 body .heroeLista {
   display: flex;
   flex-wrap: wrap;
@@ -30,7 +83,6 @@ body .heroeLista {
   border-radius: 10px;
   background-color: navajowhite;
   border: 2px solid yellowgreen;
-  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -144,6 +196,45 @@ body .monstruoLista .monstruoItem img {
   margin: 18px;
   padding: 15px;
   height: 30px;
+  border: 3px solid orangered;
+}
+
+#nombreInput {
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid limegreen;
+  border-radius: 8px;
+  color: grey;
+  background-color: navajowhite;
+  box-shadow: 0 2px 4px black;
+}
+
+#guardarBoton {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  background-color: blue;
+  box-shadow: 0 4px 6px black;
+}
+#guardarBoton:hover {
+  background-color: green;
+}
+
+.guardado {
+  padding-top: 25px;
+}
+
+.botonCargarPartida {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+.botonCargarPartida:hover {
+  background-color: limegreen;
 }
 
 /*# sourceMappingURL=estilos.css.map */
