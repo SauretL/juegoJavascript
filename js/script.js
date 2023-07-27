@@ -54,7 +54,7 @@ function mostrarDetalleMonstruo(index) {
   let monstruo = arrayMonstruos[index]
   let infoMonstruo = document.getElementById("infoMonstruo")
 
-  let listaMonstruo = `
+  let listaMonstruo = `<div class="monstruoLista">
     <h3>${monstruo.nombre}</h3>
     <ul>
       <li>Id: ${monstruo.id}</li>
@@ -63,7 +63,8 @@ function mostrarDetalleMonstruo(index) {
       <li>Ataque Físico: ${monstruo.ataqueFisico}</li>
       <li>Ataque Psíquico: ${monstruo.ataquePsiquico}</li>
     </ul>
-    <img src="${monstruo.imagen}" alt="Imagen del monstruo">
+    <img src="${monstruo.imagen}" alt="Imagen del monstruo"> 
+    </div>
   `
 
   infoMonstruo.innerHTML = listaMonstruo
@@ -118,18 +119,19 @@ function iniciarJuego() {
   monstruoAleatorio = arrayMonstruos[Math.floor(Math.random() * arrayMonstruos.length)]
   let infoMonstruoAleatorio = document.getElementById("infoMonstruoAleatorio")
 
-  let detalleMonstruo = `
+  let detalleMonstruo = ` <div class="monstruoAleatorio">
     <h3>${monstruoAleatorio.nombre}</h3>
     <ul>
       <li>HP: <span id="hpMonstruo">${monstruoAleatorio.hp}</span></li>
       <li>MP: <span id="mpMonstruo">${monstruoAleatorio.mp}</span></li>
     </ul>
     <img src="${monstruoAleatorio.imagen}" alt="Imagen del monstruo">
-    <div>
+    <div class="panelDePelea">
       <button id="ataqueFisicoBoton">Ataque Físico</button>
       <button id="ataquePsiquicoBoton">Ataque Psíquico</button>
       <button id="salvarBoton">Salvar Partida</button>
       <button id="cargarBoton">Cargar Partida</button>
+    </div>
     </div>
   `
   jugador.innerHTML = `
