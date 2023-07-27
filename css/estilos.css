@@ -1,5 +1,6 @@
 body {
   font-family: Arial, sans-serif;
+  background-color: grey;
 }
 body h1 {
   font-size: 24px;
@@ -17,6 +18,43 @@ body #botonCatalogo {
 }
 body #botonInicio {
   background-color: lightblue;
+}
+body .heroeLista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 200px;
+  height: 250px;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: navajowhite;
+  border: 2px solid yellowgreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .heroeLista h3 {
+  margin-bottom: 10px;
+}
+body .heroeLista ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+body .heroeLista ul li {
+  margin-bottom: 5px;
+}
+body .heroeLista button {
+  margin-top: auto;
+  padding: 8px 12px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+body .heroeLista button:hover {
+  background-color: red;
 }
 
 /*# sourceMappingURL=estilos.css.map */
