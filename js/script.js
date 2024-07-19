@@ -179,7 +179,7 @@ function ganasteJuego() {
   }).then((result) => {
 
     if (result.dismiss === Swal.DismissReason.timer) {
-      console.log('I was closed by the timer')
+      console.log('Me cerro el timer')
     }
   })
 
@@ -206,7 +206,7 @@ function realizarAtaqueFisico() {
       backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
     }).showToast()
 
-    if (monstruoAleatorio.hp < 0 || monstruoAleatorio.mp < 0) {
+    if (monstruoAleatorio.hp <= 0 || monstruoAleatorio.mp <= 0) {
       ganasteJuego()
     }
 
@@ -232,7 +232,7 @@ function realizarAtaquePsiquico() {
       backgroundColor: "linear-gradient(to right, #96c93d, #00b09b)",
     }).showToast()
 
-    if (monstruoAleatorio.hp < 0 || monstruoAleatorio.mp < 0) {
+    if (monstruoAleatorio.hp <= 0 || monstruoAleatorio.mp <= 0) {
       ganasteJuego()
     }
     turnoJugador = false
@@ -291,7 +291,7 @@ function turnoMonstruo() {
 
     }
 
-    if (heroeSeleccionado.hp < 0 || heroeSeleccionado.mp < 0) {
+    if (heroeSeleccionado.hp <= 0 || heroeSeleccionado.mp <= 0) {
       perdisteJuego()
     }
 
