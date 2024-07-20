@@ -201,8 +201,8 @@ function realizarAtaqueFisico() {
     Toastify({
       text: "¡Has realizado un ataque físico!",
       duration: 3000,
-      gravity: "top", 
-      position: "right", 
+      gravity: "top",
+      position: "right",
       backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
     }).showToast()
 
@@ -227,8 +227,8 @@ function realizarAtaquePsiquico() {
     Toastify({
       text: "¡Has realizado un ataque psíquico!",
       duration: 3000,
-      gravity: "top", 
-      position: "right", 
+      gravity: "top",
+      position: "right",
       backgroundColor: "linear-gradient(to right, #96c93d, #00b09b)",
     }).showToast()
 
@@ -242,6 +242,10 @@ function realizarAtaquePsiquico() {
 
 /*Ataques Monstruo */
 
+function reiniciar() {
+  window.location.reload()
+}
+
 function perdisteJuego() {
 
   Swal.fire({
@@ -249,8 +253,15 @@ function perdisteJuego() {
     text: "Carga una partida vieja o inicia un nuevo juego para continuar",
     icon: 'error',
     confirmButtonText: "Ok"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      reiniciar()
+    }
   })
+
 }
+
+
 
 function turnoMonstruo() {
   if (heroeSeleccionado !== null && monstruoAleatorio !== null && turnoJugador == false) {
@@ -266,8 +277,8 @@ function turnoMonstruo() {
       Toastify({
         text: `¡${monstruoAleatorio.nombre} realizo un ataque físico!`,
         duration: 3000,
-        gravity: "top", 
-        position: "right", 
+        gravity: "top",
+        position: "right",
         backgroundColor: "linear-gradient(to right, #FBD72B, #F9484A)",
       }).showToast()
 
@@ -282,8 +293,8 @@ function turnoMonstruo() {
       Toastify({
         text: `¡${monstruoAleatorio.nombre} realizo un ataque psíquico!`,
         duration: 3000,
-        gravity: "top", 
-        position: "right", 
+        gravity: "top",
+        position: "right",
         backgroundColor: "linear-gradient(to right, #ED008C, #FFF000)",
       }).showToast()
 
