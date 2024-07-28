@@ -117,6 +117,15 @@ arrayMonstruos
 function iniciarJuego() {
   juego.innerHTML = `<div id="infoMonstruoAleatorio"></div>`
   monstruoAleatorio = arrayMonstruos[Math.floor(Math.random() * arrayMonstruos.length)]
+
+  /*si el jugador es de un nivel menor o igual a 5 no se va a encontrar a la Reina, sino a la abeja en su lugar*/
+
+  if (monstruoAleatorio.id == "007" && heroeSeleccionado.xp <= 5) {
+    mounstruoAbeja = arrayMonstruos.find(monstruo => monstruo.id == "003")
+    monstruoAleatorio = mounstruoAbeja
+  }
+  console.log(typeof(heroeSeleccionado.xp))
+  console.log(monstruoAleatorio)
   let infoMonstruoAleatorio = document.getElementById("infoMonstruoAleatorio")
 
   let detalleMonstruo = ` <div class="monstruoAleatorio">
@@ -140,8 +149,8 @@ function iniciarJuego() {
     <li>Rol: ${heroeSeleccionado.rol}</li>
     <li>HP (Puntos de Vida): <span id="hpHeroe">${heroeSeleccionado.hp}</span></li>
     <li>MP (Puntos de Mente): <span id="mpHeroe">${heroeSeleccionado.mp}</span></li>
-    <li>Ataque Físico: ${heroeSeleccionado.ataqueFisico}</li>
-    <li>Ataque Psíquico: ${heroeSeleccionado.ataquePsiquico}</li>
+    <li>Ataque Físico: <span id="ataqueFisHeroe">${heroeSeleccionado.ataqueFisico}</span></li>
+    <li>Ataque Psíquico: <span id="ataquePsiHeroe">${heroeSeleccionado.ataquePsiquico}</span></li>
     <li>XP (experiencia): <span id="xpHeroe">${heroeSeleccionado.xp}</span> </li>
   </ul>
   </div>
@@ -184,7 +193,16 @@ function ganasteJuego() {
   })
 
   heroeSeleccionado.xp++
+  heroeSeleccionado.hp = Number(heroeSeleccionado.hp) + Math.floor(Number(heroeSeleccionado.xp)/2)
+  heroeSeleccionado.mp = Number(heroeSeleccionado.mp) + Math.floor(Number(heroeSeleccionado.xp)/2)
+  heroeSeleccionado.ataqueFisico++
+  heroeSeleccionado.ataquePsiquico++
   document.getElementById("xpHeroe").textContent = heroeSeleccionado.xp
+  document.getElementById("hpHeroe").textContent = heroeSeleccionado.hp
+  document.getElementById("mpHeroe").textContent = heroeSeleccionado.mp
+  document.getElementById("ataqueFisHeroe").textContent = heroeSeleccionado.ataqueFisico
+  document.getElementById("ataquePsiHeroe").textContent = heroeSeleccionado.ataquePsiquico
+
   iniciarJuego()
 
 }
