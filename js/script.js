@@ -18,7 +18,7 @@ function obtenerMonstruo() {
       arrayMonstruos = data.arrayMonstruos
     })
     .catch(() => {
-      alert("Error al intentar reunir los datos del .json")
+      juego.innerHTML = `<h2>Error al leer el archivo JSON</h2> <p>Tenga en cuenta que, debido a que esta aplicación usa un fetch para acceder a un JSON local, tendra que usar una aplicación que permita el acceso de recursos a través de CORS.</p>`
     })
 }
 
