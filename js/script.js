@@ -17,6 +17,9 @@ function obtenerMonstruo() {
     .then(data => {
       arrayMonstruos = data.arrayMonstruos
     })
+    .catch(() => {
+      alert("Error al intentar reunir los datos del .json")
+    })
 }
 
 obtenerMonstruo()
@@ -124,7 +127,7 @@ function iniciarJuego() {
     mounstruoAbeja = arrayMonstruos.find(monstruo => monstruo.id == "003")
     monstruoAleatorio = mounstruoAbeja
   }
-  console.log(typeof(heroeSeleccionado.xp))
+  console.log(typeof (heroeSeleccionado.xp))
   console.log(monstruoAleatorio)
   let infoMonstruoAleatorio = document.getElementById("infoMonstruoAleatorio")
 
@@ -193,8 +196,8 @@ function ganasteJuego() {
   })
 
   heroeSeleccionado.xp++
-  heroeSeleccionado.hp = Number(heroeSeleccionado.hp) + Math.floor(Number(heroeSeleccionado.xp)/2)
-  heroeSeleccionado.mp = Number(heroeSeleccionado.mp) + Math.floor(Number(heroeSeleccionado.xp)/2)
+  heroeSeleccionado.hp = Number(heroeSeleccionado.hp) + Math.floor(Number(heroeSeleccionado.xp) / 2)
+  heroeSeleccionado.mp = Number(heroeSeleccionado.mp) + Math.floor(Number(heroeSeleccionado.xp) / 2)
   heroeSeleccionado.ataqueFisico++
   heroeSeleccionado.ataquePsiquico++
   document.getElementById("xpHeroe").textContent = heroeSeleccionado.xp
