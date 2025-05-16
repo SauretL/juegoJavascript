@@ -237,4 +237,19 @@ body .monstruoLista .monstruoItem img {
   background-color: limegreen;
 }
 
+.monstruoImagen {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.heroeImagen {
+  width: 100%;
+  max-width: 75px;
+  height: auto;
+  display: block;
+}
+
 /*# sourceMappingURL=estilos.css.map */

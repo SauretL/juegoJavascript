@@ -1,0 +1,20 @@
+{
+  "name": "monster-hunter",
+  "version": "1.0.0",
+  "description": "Ve al Catálogo de Monstruos para aprender sobre las estadísticas de los distintos enemigos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SauretL/juegoJavascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SauretL/juegoJavascript/issues"
+  },
+  "homepage": "https://github.com/SauretL/juegoJavascript#readme"
+}

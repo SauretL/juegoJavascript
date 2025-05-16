@@ -27,9 +27,9 @@ obtenerMonstruo()
 /*Heroes para elegir */
 
 let arrayHeroes = [
-  { nombre: "Psyko", rol: "Tanque psiquico", hp: "70", mp: "30", ataqueFisico: "3", ataquePsiquico: "5", xp: 0 },
-  { nombre: "Lance", rol: "Cañon de Cristal", hp: "30", mp: "60", ataqueFisico: "8", ataquePsiquico: "2", xp: 0 },
-  { nombre: "Sword", rol: "Guerrero moderado", hp: "60", mp: "40", ataqueFisico: "5", ataquePsiquico: "3", xp: 0 }
+  { nombre: "Psyko", rol: "Tanque psiquico", hp: "70", mp: "30", ataqueFisico: "3", ataquePsiquico: "5", xp: 0, img: "/img/heroPsyko2.png" },
+  { nombre: "Lance", rol: "Cañon de Cristal", hp: "30", mp: "60", ataqueFisico: "8", ataquePsiquico: "2", xp: 0, img: "/img/heroLance2.png" },
+  { nombre: "Sword", rol: "Guerrero moderado", hp: "60", mp: "40", ataqueFisico: "5", ataquePsiquico: "3", xp: 0, img: "/img/heroSword2.png" }
 ]
 
 /*Botón de Catálogo */
@@ -66,7 +66,7 @@ function mostrarDetalleMonstruo(index) {
       <li>Ataque Físico: ${monstruo.ataqueFisico}</li>
       <li>Ataque Psíquico: ${monstruo.ataquePsiquico}</li>
     </ul>
-    <img src="${monstruo.imagen}" alt="Imagen del monstruo"> 
+    <img class="monstruoImagen" src="${monstruo.imagen}" alt="Imagen del monstruo"> 
     </div>
   `
 
@@ -88,6 +88,7 @@ function clickInicio() {
           <h3>${heroe.nombre}</h3>
           <ul>
             <li>Rol: ${heroe.rol}</li>
+            <img class="heroeImagen" src="${heroe.img}" alt="Imagen del heroe">
             <li>HP (Puntos de Vida): ${heroe.hp}</li>
             <li>MP (Puntos de Mente): ${heroe.mp}</li>
             <li>Ataque Físico: ${heroe.ataqueFisico}</li>
@@ -138,7 +139,7 @@ function iniciarJuego() {
       <li>HP: <span id="hpMonstruo">${monstruoAleatorio.hp}</span></li>
       <li>MP: <span id="mpMonstruo">${monstruoAleatorio.mp}</span></li>
     </ul>
-    <img src="${monstruoAleatorio.imagen}" alt="Imagen del monstruo">
+    <img class="monstruoImagen" src="${monstruoAleatorio.imagen}" alt="Imagen del monstruo">
     <div class="panelDePelea">
       <button id="ataqueFisicoBoton" class="botonPelea">Ataque Físico</button>
       <button id="ataquePsiquicoBoton" class="botonPelea">Ataque Psíquico</button>
@@ -151,6 +152,7 @@ function iniciarJuego() {
   <h3>${heroeSeleccionado.nombre}</h3>
   <ul>
     <li>Rol: ${heroeSeleccionado.rol}</li>
+    <img class="heroeImagen" src="${heroeSeleccionado.img}" alt="Imagen del heroe">
     <li>HP (Puntos de Vida): <span id="hpHeroe">${heroeSeleccionado.hp}</span></li>
     <li>MP (Puntos de Mente): <span id="mpHeroe">${heroeSeleccionado.mp}</span></li>
     <li>Ataque Físico: <span id="ataqueFisHeroe">${heroeSeleccionado.ataqueFisico}</span></li>
