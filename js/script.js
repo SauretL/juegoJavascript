@@ -66,7 +66,7 @@ function mostrarDetalleMonstruo(index) {
       <li>Ataque Físico: ${monstruo.ataqueFisico}</li>
       <li>Ataque Psíquico: ${monstruo.ataquePsiquico}</li>
     </ul>
-    <img class="monstruoImagen" src="${monstruo.imagen}" alt="Imagen del monstruo"> 
+    <img class="monstruoImagen" src="${monstruo.img}" alt="Imagen del monstruo"> 
     </div>
   `
 
@@ -139,7 +139,7 @@ function iniciarJuego() {
       <li>HP: <span id="hpMonstruo">${monstruoAleatorio.hp}</span></li>
       <li>MP: <span id="mpMonstruo">${monstruoAleatorio.mp}</span></li>
     </ul>
-    <img class="monstruoImagen" src="${monstruoAleatorio.imagen}" alt="Imagen del monstruo">
+    <img class="monstruoImagen" src="${monstruoAleatorio.img}" alt="Imagen del monstruo">
     <div class="panelDePelea">
       <button id="ataqueFisicoBoton" class="botonPelea">Ataque Físico</button>
       <button id="ataquePsiquicoBoton" class="botonPelea">Ataque Psíquico</button>
@@ -149,10 +149,10 @@ function iniciarJuego() {
     </div>
   `
   jugador.innerHTML = ` <div class="heroeJugador">
-  <h3>${heroeSeleccionado.nombre}</h3>
+  <h3 id="nombreHeroe">${heroeSeleccionado.nombre}</h3>
   <ul>
-    <li>Rol: ${heroeSeleccionado.rol}</li>
-    <img class="heroeImagen" src="${heroeSeleccionado.img}" alt="Imagen del heroe">
+    <li id="rolHeroe">Rol: ${heroeSeleccionado.rol}</li>
+    <img id="imgHeroe" class="heroeImagen" src="${heroeSeleccionado.img}" alt="Imagen del heroe">
     <li>HP (Puntos de Vida): <span id="hpHeroe">${heroeSeleccionado.hp}</span></li>
     <li>MP (Puntos de Mente): <span id="mpHeroe">${heroeSeleccionado.mp}</span></li>
     <li>Ataque Físico: <span id="ataqueFisHeroe">${heroeSeleccionado.ataqueFisico}</span></li>
@@ -352,6 +352,8 @@ function salvarPartida() {
     if (nombre) {
       const clave = "partida_" + nombre.toLowerCase()
       const datosPartida = {
+        nombre: heroeSeleccionado.nombre,
+        img: heroeSeleccionado.img,
         hp: heroeSeleccionado.hp,
         mp: heroeSeleccionado.mp,
         rol: heroeSeleccionado.rol,
@@ -388,6 +390,8 @@ function salvarPartida() {
 
 function cargarDatosPartida(partida) {
   heroeSeleccionado = Object.assign({}, partida)
+  heroeSeleccionado.nombre = partida.nombre
+  heroeSeleccionado.img = partida.img
   heroeSeleccionado.hp = partida.hp
   heroeSeleccionado.mp = partida.mp
   heroeSeleccionado.rol = partida.rol
@@ -395,12 +399,17 @@ function cargarDatosPartida(partida) {
   heroeSeleccionado.ataqueFisico = partida.ataqueFisico
   heroeSeleccionado.ataquePsiquico = partida.ataquePsiquico
 
+  document.getElementById("nombreHeroe").textContent = heroeSeleccionado.nombre
+  document.getElementById("imgHeroe").src = heroeSeleccionado.img
+  document.getElementById("rolHeroe").textContent = heroeSeleccionado.rol
   document.getElementById("hpHeroe").textContent = heroeSeleccionado.hp
   document.getElementById("mpHeroe").textContent = heroeSeleccionado.mp
+
+  iniciarJuego()
 }
 
 function cargarPartida() {
-  salvar.innerHTML = "<ul id='partidasGuardadas'></ul>";
+  salvar.innerHTML = "<ul id='partidasGuardadas'></ul>"
   let partidasGuardadas = document.getElementById("partidasGuardadas")
 
   let claves = Object.keys(localStorage).filter((clave) => clave.startsWith("partida_"))

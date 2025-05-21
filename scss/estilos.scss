@@ -1,19 +1,24 @@
 body {
     font-family: Arial, sans-serif;
     background-color: grey;
-
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
 
     h1 {
-        font-size: 24px;
+        font-size: clamp(1.5rem, 4vw, 2rem);
         text-align: center;
-        margin-top: 20px;
+        margin: 20px 0;
     }
 
     .botonPrincipal {
+        display: block;
         margin: 10px auto;
         padding: 10px 20px;
         border: none;
         border-radius: 10px;
+        width: 80%;
+        max-width: 300px;
     }
 
     #botonCatalogo {
@@ -24,276 +29,174 @@ body {
         background-color: lightblue;
     }
 
-    .heroeJugador {
-        width: 200px;
-        height: 250px;
-        margin: 10px;
-        padding: 15px;
-        border-radius: 10px;
+    // Contenedores principales
+    #juego,
+    #jugador,
+    #salvar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px auto;
+        max-width: 1200px;
+    }
+
+    .heroeJugador,
+    .monstruoAleatorio,
+    .heroeLista {
         background-color: lightblue;
         border: 5px solid cyan;
-
-    }
-
-    .botonMonstruo {
-        padding: 8px;
-        background-color: black;
-        color: white;
-
-        &:hover {
-            background-color: red;
-        }
-    }
-
-    .botonPelea {
-        padding: 4px;
-        color: white;
-
-
-    }
-
-    #ataqueFisicoBoton {
-        background-color: orangered;
-
-        &:hover {
-            background-color: white;
-            color: red;
-            font-weight: bolder;
-        }
-    }
-
-    #ataquePsiquicoBoton {
-        background-color: purple;
-
-        &:hover {
-            background-color: white;
-            color: red;
-            font-weight: bolder;
-        }
-    }
-
-    #salvarBoton {
-        background-color: green;
-
-        &:hover {
-            background-color: white;
-            color: red;
-            font-weight: bolder;
-        }
-    }
-
-    #cargarBoton {
-        background-color: blue;
-
-        &:hover {
-            background-color: white;
-            color: red;
-            font-weight: bolder;
-        }
-    }
-
-
-    .heroeLista {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 200px;
-        height: 250px;
-        margin: 10px;
-        padding: 15px;
         border-radius: 10px;
-        background-color: navajowhite;
-        border: 2px solid yellowgreen;
-        flex-direction: column;
-        align-items: center;
+        padding: 15px;
+        margin: 10px;
+        width: 100%;
+        max-width: 300px;
+        min-width: 250px;
+        box-sizing: border-box;
+        position: relative;
 
         h3 {
-            margin-bottom: 10px;
+            margin: 0 0 10px 0;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            text-align: center;
         }
 
         ul {
             list-style: none;
             padding: 0;
             margin: 0;
+            width: 100%;
 
             li {
-                margin-bottom: 5px;
-            }
-        }
-
-        button {
-            margin-top: auto;
-            padding: 8px 12px;
-            background-color: green;
-            color: white;
-            border: none;
-            border-radius: 5px;
-
-            &:hover {
-                background-color: red;
-            }
-        }
-    }
-
-    .monstruoLista {
-        max-width: 800px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 15px;
-        border-radius: 10px;
-        background-color: white;
-        border: 6px solid black;
-
-        .monstruoItem {
-            width: 200px;
-            height: 250px;
-            margin: 10px;
-            padding: 15px;
-            border-radius: 10px;
-            background-color: #f3f3f3;
-            border: 2px solid #ccc;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            h3 {
-                margin-bottom: 10px;
-            }
-
-            ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-
-                li {
-                    margin-bottom: 5px;
-                }
-            }
-
-            img {
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                object-fit: cover;
-                margin-bottom: 10px;
-            }
-        }
-    }
-}
-
-.monstruoAleatorio {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: white;
-    border: 6px solid red;
-
-    .monstruoItem {
-        width: 200px;
-        height: 250px;
-        margin: 10px;
-        padding: 15px;
-        border-radius: 10px;
-        background-color: orangered;
-        border: 2px solid orange;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        h3 {
-            margin-bottom: 10px;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-
-            li {
-                margin-bottom: 5px;
+                margin-bottom: 8px;
+                word-wrap: break-word;
+                font-size: clamp(0.9rem, 2vw, 1rem);
             }
         }
 
         img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 10px;
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            aspect-ratio: 1/1;
+            object-fit: contain;
+            margin: 10px auto;
+            display: block;
         }
+    }
 
+    .heroeLista {
+        background-color: navajowhite;
+        border-color: yellowgreen;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
+        button {
+            margin-top: auto;
+            width: 80%;
+            max-width: 200px;
+        }
+    }
+
+    .monstruoLista {
+        background-color: white;
+        border: 6px solid black;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 800px;
+
+        .monstruoImagen {
+            max-width: 200px;
+            margin: 15px auto;
+        }
     }
 
     .panelDePelea {
-        background-color: grey;
-        margin: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
         padding: 15px;
-        height: 30px;
-        border: 3px solid orangered;
-    }
-}
+        margin-top: 20px;
 
-#nombreInput {
-    padding: 8px;
-    font-size: 16px;
-    border: 2px solid limegreen;
-    border-radius: 8px;
-    color: grey;
-    background-color: navajowhite;
-    box-shadow: 0 2px 4px black;
-
-}
-
-#guardarBoton {
-    padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 12px;
-    color: white;
-    background-color: blue;
-    box-shadow: 0 4px 6px black;
-
-    &:hover {
-        background-color: green;
+        button {
+            flex: 1 1 150px;
+            max-width: 200px;
+            padding: 10px;
+            font-size: clamp(0.8rem, 2vw, 1rem);
+        }
     }
 
-}
+    // Media Queries para responsive
+    @media (max-width: 768px) {
 
-.guardado {
-    padding-top: 25px;
-}
+        .heroeJugador,
+        .monstruoAleatorio,
+        .heroeLista {
+            max-width: 100%;
+            margin: 10px 0;
+        }
 
-.botonCargarPartida {
-    background-color: blue;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    margin-top: 5px;
+        .botonPrincipal {
+            width: 95%;
+            padding: 8px 15px;
+        }
 
-    &:hover {
-        background-color: limegreen;
+        .panelDePelea {
+            flex-direction: column;
+
+            button {
+                width: 100%;
+                max-width: none;
+            }
+        }
     }
 
-}
+    @media (max-width: 480px) {
+        padding: 10px;
 
-.monstruoImagen {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
+        .heroeJugador,
+        .monstruoAleatorio,
+        .heroeLista {
+            padding: 10px;
 
-.heroeImagen {
-    width: 100%;
-    max-width: 75px;
-    height: auto;
-    display: block;
+            img {
+                max-width: 100px;
+            }
+        }
+
+        .monstruoLista .monstruoImagen {
+            max-width: 150px;
+        }
+    }
+
+    // Estilos comunes para botones
+    .botonPelea,
+    .botonMonstruo,
+    .botonCargarPartida,
+    #guardarBoton {
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-weight: bold;
+        text-align: center;
+        display: inline-block;
+    }
+
+    #nombreInput {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px 0;
+    }
+
+    .guardado {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
 }
