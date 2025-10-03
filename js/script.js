@@ -27,9 +27,9 @@ obtenerMonstruo()
 /*Heroes para elegir */
 
 let arrayHeroes = [
-  { nombre: "Psyko", rol: "Tanque psiquico", hp: "70", mp: "30", ataqueFisico: "3", ataquePsiquico: "5", xp: 0, img: "img/heroPsyko2.png" },
-  { nombre: "Lance", rol: "Cañon de Cristal", hp: "30", mp: "60", ataqueFisico: "8", ataquePsiquico: "2", xp: 0, img: "img/heroLance2.png" },
-  { nombre: "Sword", rol: "Guerrero moderado", hp: "60", mp: "40", ataqueFisico: "5", ataquePsiquico: "3", xp: 0, img: "img/heroSword2.png" }
+  { nombre: "Psyko", rol: "Tanque psiquico", hp: "70", mp: "30", ataqueFisico: "3", ataquePsiquico: "5", xp: 0, img: "img/heroPsyko2.png", imgVictoria: "img/heroPsyko.png" },
+  { nombre: "Lance", rol: "Cañon de Cristal", hp: "30", mp: "60", ataqueFisico: "8", ataquePsiquico: "2", xp: 0, img: "img/heroLance2.png", imgVictoria: "img/heroLance.png" },
+  { nombre: "Sword", rol: "Guerrero moderado", hp: "60", mp: "40", ataqueFisico: "5", ataquePsiquico: "3", xp: 0, img: "img/heroSword2.png", imgVictoria: "img/heroSword.png" }
 ]
 
 /*Botón de Catálogo */
@@ -133,7 +133,14 @@ function iniciarJuego() {
   console.log(monstruoAleatorio)
   let infoMonstruoAleatorio = document.getElementById("infoMonstruoAleatorio")
 
-  let detalleMonstruo = ` <div class="monstruoAleatorio">
+
+
+  let detalleMonstruo = ` <div class=`
+  if (monstruoAleatorio.id == "007") { detalleMonstruo += `"reina` } else {
+
+    detalleMonstruo += `"monstruoAleatorio`
+  }
+  detalleMonstruo += `">
     <h3>${monstruoAleatorio.nombre}</h3>
     <ul>
       <li>HP: <span id="hpMonstruo">${monstruoAleatorio.hp}</span></li>
@@ -177,7 +184,7 @@ function iniciarJuego() {
 
 /*Ataques Jugador */
 
-function ganasteJuego() {
+function ganasteBatalla() {
 
   let timerInterval
   Swal.fire({
@@ -197,6 +204,8 @@ function ganasteJuego() {
       console.log('Me cerro el timer')
     }
   })
+
+  ganarJuego()
 
   heroeSeleccionado.xp++
   heroeSeleccionado.hp = Number(heroeSeleccionado.hp) + Math.floor(Number(heroeSeleccionado.xp) / 2)
@@ -231,7 +240,7 @@ function realizarAtaqueFisico() {
     }).showToast()
 
     if (monstruoAleatorio.hp <= 0 || monstruoAleatorio.mp <= 0) {
-      ganasteJuego()
+      if (monstruoAleatorio.id == "007") { ganarJuego() } else { ganasteBatalla() }
     }
 
     turnoJugador = false
@@ -257,7 +266,8 @@ function realizarAtaquePsiquico() {
     }).showToast()
 
     if (monstruoAleatorio.hp <= 0 || monstruoAleatorio.mp <= 0) {
-      ganasteJuego()
+      if (monstruoAleatorio.id == "007") { ganarJuego() } else { ganasteBatalla() }
+
     }
     turnoJugador = false
     turnoMonstruo()
@@ -284,8 +294,6 @@ function perdisteJuego() {
   })
 
 }
-
-
 
 function turnoMonstruo() {
   if (heroeSeleccionado !== null && monstruoAleatorio !== null && turnoJugador == false) {
@@ -427,5 +435,12 @@ function cargarPartida() {
     li.appendChild(botonCargar)
     partidasGuardadas.appendChild(li)
   })
+}
+
+/*Ganar el juego*/
+
+function ganarJuego() {
+  juego.innerHTML = `<h2>Venciste a la reina y ganaste el juego, felicitaciones.</h2>
+  <img src=${heroeSeleccionado.imgVictoria}>`
 }
 

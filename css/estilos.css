@@ -5,12 +5,14 @@ body {
   padding: 20px;
   box-sizing: border-box;
 }
-body h1 {
+
+h1 {
   font-size: clamp(1.5rem, 4vw, 2rem);
   text-align: center;
   margin: 20px 0;
 }
-body .botonPrincipal {
+
+.botonPrincipal {
   display: block;
   margin: 10px auto;
   padding: 10px 20px;
@@ -19,15 +21,16 @@ body .botonPrincipal {
   width: 80%;
   max-width: 300px;
 }
-body #botonCatalogo {
+.botonPrincipal#botonCatalogo {
   background-color: forestgreen;
 }
-body #botonInicio {
+.botonPrincipal#botonInicio {
   background-color: lightblue;
 }
-body #juego,
-body #jugador,
-body #salvar {
+
+#juego,
+#jugador,
+#salvar {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -35,11 +38,8 @@ body #salvar {
   margin: 20px auto;
   max-width: 1200px;
 }
-body .heroeJugador,
-body .monstruoAleatorio,
-body .heroeLista {
-  background-color: lightblue;
-  border: 5px solid cyan;
+
+.reina, .heroeLista, .monstruoAleatorio, .heroeJugador {
   border-radius: 10px;
   padding: 15px;
   margin: 10px;
@@ -49,31 +49,23 @@ body .heroeLista {
   box-sizing: border-box;
   position: relative;
 }
-body .heroeJugador h3,
-body .monstruoAleatorio h3,
-body .heroeLista h3 {
+.reina h3, .heroeLista h3, .monstruoAleatorio h3, .heroeJugador h3 {
   margin: 0 0 10px 0;
   font-size: clamp(1.2rem, 3vw, 1.5rem);
   text-align: center;
 }
-body .heroeJugador ul,
-body .monstruoAleatorio ul,
-body .heroeLista ul {
+.reina ul, .heroeLista ul, .monstruoAleatorio ul, .heroeJugador ul {
   list-style: none;
   padding: 0;
   margin: 0;
   width: 100%;
 }
-body .heroeJugador ul li,
-body .monstruoAleatorio ul li,
-body .heroeLista ul li {
+.reina ul li, .heroeLista ul li, .monstruoAleatorio ul li, .heroeJugador ul li {
   margin-bottom: 8px;
   word-wrap: break-word;
   font-size: clamp(0.9rem, 2vw, 1rem);
 }
-body .heroeJugador img,
-body .monstruoAleatorio img,
-body .heroeLista img {
+.reina img, .heroeLista img, .monstruoAleatorio img, .heroeJugador img {
   width: 100%;
   max-width: 150px;
   height: auto;
@@ -82,30 +74,43 @@ body .heroeLista img {
   margin: 10px auto;
   display: block;
 }
-body .heroeLista {
+
+.heroeJugador {
+  background-color: lightblue;
+  border: 5px solid cyan;
+}
+
+.monstruoAleatorio {
+  background-color: white;
+  border: 5px solid black;
+}
+
+.heroeLista {
   background-color: navajowhite;
-  border-color: yellowgreen;
+  border: 5px solid yellowgreen;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-body .heroeLista button {
+.heroeLista button {
   margin-top: auto;
   width: 80%;
   max-width: 200px;
 }
-body .monstruoLista {
-  background-color: white;
-  border: 6px solid black;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 800px;
+
+.reina {
+  background-color: orange;
+  border: 5px solid orangered;
 }
-body .monstruoLista .monstruoImagen {
-  max-width: 200px;
-  margin: 15px auto;
+.reina img {
+  border: 2px solid red;
 }
-body .panelDePelea {
+.reina button {
+  background-color: orangered;
+  color: wheat;
+}
+
+.panelDePelea {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -113,53 +118,29 @@ body .panelDePelea {
   padding: 15px;
   margin-top: 20px;
 }
-body .panelDePelea button {
+.panelDePelea button {
   flex: 1 1 150px;
   max-width: 200px;
   padding: 10px;
   font-size: clamp(0.8rem, 2vw, 1rem);
 }
-@media (max-width: 768px) {
-  body .heroeJugador,
-  body .monstruoAleatorio,
-  body .heroeLista {
-    max-width: 100%;
-    margin: 10px 0;
-  }
-  body .botonPrincipal {
-    width: 95%;
-    padding: 8px 15px;
-  }
-  body .panelDePelea {
-    flex-direction: column;
-  }
-  body .panelDePelea button {
-    width: 100%;
-    max-width: none;
-  }
+
+.monstruoLista {
+  background-color: white;
+  border: 6px solid black;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
 }
-@media (max-width: 480px) {
-  body {
-    padding: 10px;
-  }
-  body .heroeJugador,
-  body .monstruoAleatorio,
-  body .heroeLista {
-    padding: 10px;
-  }
-  body .heroeJugador img,
-  body .monstruoAleatorio img,
-  body .heroeLista img {
-    max-width: 100px;
-  }
-  body .monstruoLista .monstruoImagen {
-    max-width: 150px;
-  }
+.monstruoLista .monstruoImagen {
+  max-width: 200px;
+  margin: 15px auto;
 }
-body .botonPelea,
-body .botonMonstruo,
-body .botonCargarPartida,
-body #guardarBoton {
+
+.botonPelea,
+.botonMonstruo,
+.botonCargarPartida,
+#guardarBoton {
   transition: all 0.3s ease;
   cursor: pointer;
   border: none;
@@ -169,17 +150,60 @@ body #guardarBoton {
   text-align: center;
   display: inline-block;
 }
-body #nombreInput {
-  width: 100%;
-  max-width: 300px;
-  margin: 10px 0;
-}
-body .guardado {
+
+.guardado {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   width: 100%;
+}
+
+#nombreInput {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .heroeJugador,
+  .monstruoAleatorio,
+  .reina,
+  .heroeLista {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+  .botonPrincipal {
+    width: 95%;
+    padding: 8px 15px;
+  }
+  .panelDePelea {
+    flex-direction: column;
+  }
+  .panelDePelea button {
+    width: 100%;
+    max-width: none;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  .heroeJugador,
+  .monstruoAleatorio,
+  .reina,
+  .heroeLista {
+    padding: 10px;
+  }
+  .heroeJugador img,
+  .monstruoAleatorio img,
+  .reina img,
+  .heroeLista img {
+    max-width: 100px;
+  }
+  .monstruoLista .monstruoImagen {
+    max-width: 150px;
+  }
 }
 
 /*# sourceMappingURL=estilos.css.map */
