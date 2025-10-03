@@ -7,7 +7,7 @@
             "mp": "10",
             "ataqueFisico": "1",
             "ataquePsiquico": "2",
-            "img": "/img/enemySlug.png"
+            "img": "img/enemySlug.png"
         },
         {
             "nombre": "Hormiga",
@@ -16,7 +16,7 @@
             "mp": "5",
             "ataqueFisico": "3",
             "ataquePsiquico": "3",
-            "img": "/img/enemyAnt.png"
+            "img": "img/enemyAnt.png"
         },
         {
             "nombre": "Abeja",
@@ -25,7 +25,7 @@
             "mp": "10",
             "ataqueFisico": "6",
             "ataquePsiquico": "4",
-            "img": "/img/enemyBee.png"
+            "img": "img/enemyBee.png"
         },
         {
             "nombre": "Mariposa",
@@ -34,7 +34,7 @@
             "mp": "15",
             "ataqueFisico": "4",
             "ataquePsiquico": "6",
-            "img": "/img/enemyButterfly.png"
+            "img": "img/enemyButterfly.png"
         },
         {
             "nombre": "Gusano",
@@ -43,7 +43,7 @@
             "mp": "12",
             "ataqueFisico": "10",
             "ataquePsiquico": "8",
-            "img": "/img/enemyWorm.png"
+            "img": "img/enemyWorm.png"
         },
         {
             "nombre": "Escarabajo",
@@ -52,7 +52,7 @@
             "mp": "15",
             "ataqueFisico": "7",
             "ataquePsiquico": "12",
-            "img": "/img/enemyBeetle.png"
+            "img": "img/enemyBeetle.png"
         },
         {
             "nombre": "Reina",
@@ -61,7 +61,7 @@
             "mp": "30",
             "ataqueFisico": "15",
             "ataquePsiquico": "15",
-            "img": "/img/enemyBeeQueen.png"
+            "img": "img/enemyBeeQueen.png"
         }
     ]
 }

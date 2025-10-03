@@ -27,9 +27,9 @@ obtenerMonstruo()
 /*Heroes para elegir */
 
 let arrayHeroes = [
-  { nombre: "Psyko", rol: "Tanque psiquico", hp: "70", mp: "30", ataqueFisico: "3", ataquePsiquico: "5", xp: 0, img: "/img/heroPsyko2.png" },
-  { nombre: "Lance", rol: "Cañon de Cristal", hp: "30", mp: "60", ataqueFisico: "8", ataquePsiquico: "2", xp: 0, img: "/img/heroLance2.png" },
-  { nombre: "Sword", rol: "Guerrero moderado", hp: "60", mp: "40", ataqueFisico: "5", ataquePsiquico: "3", xp: 0, img: "/img/heroSword2.png" }
+  { nombre: "Psyko", rol: "Tanque psiquico", hp: "70", mp: "30", ataqueFisico: "3", ataquePsiquico: "5", xp: 0, img: "img/heroPsyko2.png" },
+  { nombre: "Lance", rol: "Cañon de Cristal", hp: "30", mp: "60", ataqueFisico: "8", ataquePsiquico: "2", xp: 0, img: "img/heroLance2.png" },
+  { nombre: "Sword", rol: "Guerrero moderado", hp: "60", mp: "40", ataqueFisico: "5", ataquePsiquico: "3", xp: 0, img: "img/heroSword2.png" }
 ]
 
 /*Botón de Catálogo */
